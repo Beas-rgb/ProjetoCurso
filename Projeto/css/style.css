@@ -36,7 +36,14 @@
 
 .btadd{
   float: right;
-  color: red;
+  color: #0000007d;
+  right: 2px;
+  bottom:14px;
+  cursor: pointer;
+}
+
+.btadd:hover{
+  color: #e66b6b;
 }
 
 .ls-produto{
