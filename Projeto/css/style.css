@@ -77,17 +77,23 @@ h1 span{
 }
 
 #btPrincipal{
-  background-color: blue;
+  background-color: greenyellow;
   border-radius: 100%;
   width: 70px;
   height: 70px;
+  color: #0000007d;
+  cursor: pointer;
+}
+
+#btPrincipal:hover{
+  color: #e66b6b;
 }
 
 .btTamanho{
   font-size: 50px;
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 11px;
+  top: 11px;
 }
 
 #btPrincipal span{

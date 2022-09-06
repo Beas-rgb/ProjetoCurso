@@ -43,4 +43,12 @@ function addProdutoCarrinho(i){
 
 }
 
+function verListaProdutoSelecionado(){
+  for (produto of lsProduto) {
+    if(produto.carrinho){
+      console.log(produto)
+    }
+  }
+}
+
 buscarProduto();
