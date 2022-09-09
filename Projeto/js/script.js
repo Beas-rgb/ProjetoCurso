@@ -2,15 +2,18 @@ let xhttp = new XMLHttpRequest();
 let lsProduto = [];
 
 function buscarProduto(){
-  xhttp.open("GET","https://pascoa-chiquinha.herokuapp.com/produto/");
+  xhttp.open("GET","https://api-loja-de-camiseta.herokuapp.com/produto/");
   xhttp.send();
   xhttp.onload = function(){
     lsProduto = this.response;
     lsProduto = JSON.parse(lsProduto);
     montarListaProdutosHtml(lsProduto);
+    marcarProdutosSelecionadosLocalStorage();
     
   }
 }
+
+
 
 function montarListaProdutosHtml(lsProduto){
   let listaProduto = "";
@@ -21,7 +24,6 @@ function montarListaProdutosHtml(lsProduto){
     <div class="produto">
        <img src="${produto.imagem} alt="">
        <p class="nome">${produto.nome}</p>
-       <p class="descricao">${produto.descricao}</p>
        <p class="valor">R$: ${produto.valor.toFixed(2)} <span class="btadd"><i class="material-icons" onclick="addProdutoCarrinho(${i})">&#xe8cc;</i></span></p></span></p>
     </div> 
    </div>`;
@@ -29,6 +31,16 @@ function montarListaProdutosHtml(lsProduto){
   }
   document.getElementById("listaProduto").innerHTML = listaProduto;
   document.getElementById("listaProduto").style.display = '';
+}
+
+function marcarProdutosSelecionadosLocalStorage(){
+  let lista = localStorage.getItem("listaProdutoLocalStorage");
+  lista = JSON.parse(lista);
+  for (i in lista) {
+      if(lista[i].carrinho){
+          addProdutoCarrinho(i);
+      }
+  }
 }
 
 function addProdutoCarrinho(i){
@@ -40,15 +52,44 @@ function addProdutoCarrinho(i){
     produto.carrinho = false;
     document.getElementsByClassName("material-icons")[i].style.color = "#0000007d";
   }
-
+  localStorage.setItem("listaProdutoLocalStorage",JSON.stringify(lsProduto));
 }
 
 function verListaProdutoSelecionado(){
+  let listaProduto = "";
+  document.getElementById("listaProduto").innerHTML = "";
+  let i = 0;
+  let j = 0;
   for (produto of lsProduto) {
     if(produto.carrinho){
-      console.log(produto)
-    }
+      produto.quantidade = 1;
+      listaProduto += `
+    <div class="ls-produto">
+    <div class="produto">
+       <img src="${produto.imagem} alt="">
+       <p class="nome">${produto.nome}</p>
+       <p class="valor">R$: ${produto.valor.toFixed(2)} 
+       </p>
+
+       <span class="btMaisMenos">
+         <span class="btMais" onclick="add(1,${i},${j})">+</span>
+          <span class="btMenos" onclick="add(-1,${i},${j})">-</span>
+       </span>
+       
+         <span class="quantidade">${produto.quantidade}</span>
+
+    </div> 
+   </div>`;
+   i++;
   }
+  j++;
+  }
+  document.getElementById("listaProduto").innerHTML = listaProduto;
+}
+
+function add(qt, i, j){
+  lsProduto[j].quantidade += qt;
+  document.getElementsByClassName("quantidade")[i].innerHTML = lsProduto[j].quantidade;
 }
 
 buscarProduto();

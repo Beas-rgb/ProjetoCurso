@@ -21,17 +21,15 @@
   color: white;
   text-align: center;
   margin-top: -5px;
-  padding: 5px;
+  padding: 14px;
 }
 
-.produto .descricao{
-  padding: 5px;
-  background-color: aqua;
-}
+
 
 .valor {
-  padding: 5px;
+  padding: 10px;
   background-color: blue;
+  font-weight: bold;
 }
 
 .btadd{
@@ -110,4 +108,28 @@ h1 span{
   position: fixed;
   bottom: 30px;
   right: 30px;
+}
+
+.btMaisMenos{
+  right: -100px;
+  bottom: 38px;
+  position: relative;
+}
+
+.btMais, .btMenos{
+  cursor: pointer;
+  color: #e66b6b;
+  font-weight: bold;
+  font-size: 32px;
+  padding: 5px;
+}
+
+.quantidade{
+  position: relative;
+  right: -117px;
+  bottom: 41px;
+  background-color: #e66b6b;
+  font-size: 20px;
+  border-radius: 20% 0% 0% 10%;
+  padding: 8px;
 }
