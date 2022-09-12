@@ -133,3 +133,29 @@ h1 span{
   border-radius: 20% 0% 0% 10%;
   padding: 8px;
 }
+
+#formulario{
+  display: grid;
+  place-items: center;
+}
+
+label{
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+input{
+  width: 500px;
+  height: 20px;
+  border: 1px solid #0000007d;
+}
+
+#btFinalizar{
+  background-color: #e66b6b;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
