@@ -22,7 +22,7 @@ function montarListaProdutosHtml(lsProduto){
     listaProduto += `
     <div class="ls-produto">
     <div class="produto">
-       <img src="${produto.imagem} alt="">
+       <img src="${produto.imagem}" alt="">
        <p class="nome">${produto.nome}</p>
        <p class="valor">R$: ${produto.valor.toFixed(2)} <span class="btadd"><i class="material-icons" onclick="addProdutoCarrinho(${i})">&#xe8cc;</i></span></p></span></p>
     </div> 
