@@ -74,7 +74,7 @@ function verListaProdutoSelecionado(){
       listaProduto += `
     <div class="ls-produto">
     <div class="produto">
-       <img src="${produto.imagem} alt="">
+       <img src="${produto.imagem}" alt="">
        <p class="nome">${produto.nome}</p>
        <p class="valor">R$: ${produto.valor.toFixed(2)} 
        </p>
