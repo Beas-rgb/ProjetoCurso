@@ -30,7 +30,8 @@ function montarListaProdutosHtml(lsProduto){
    i++;
   }
   document.getElementById("listaProduto").innerHTML = listaProduto;
-  document.getElementById("listaProduto").style.display = '';
+  document.getElementById("listaProduto").style.display = "";
+  document.getElementById("formulario").style.display = "none";
 }
 
 function marcarProdutosSelecionadosLocalStorage(){

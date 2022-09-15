@@ -3,10 +3,15 @@
   padding: 0;
 }
 
+body {
+  background: linear-gradient(to bottom right, #0577e2, #49b8ce);
+}
+
 .produto{
   width: 200px;
   height: 283px;
-  border: solid #000000 5px;
+  border: solid #15D96F 5px;
+  border-radius: 7px;
   margin: 10px;
   float: left;
 }
@@ -17,16 +22,17 @@
 }
 
 .produto .nome{
-  background-color: gray;
+  background-color: #17b5a1;
   color: white;
   text-align: center;
   margin-top: -5px;
   padding: 14px;
+  font-family: 'Lucida Sans';
 }
 
 .valor {
   padding: 10px;
-  background-color: blue;
+  background-color: #41F5AA;
   font-weight: bold;
 }
 
@@ -43,23 +49,25 @@
 }
 
 .ls-produto{
-  background-color: rgb(158, 15, 15);
   width: 700px;
+  margin-top: 50px;
 }
 
 #container {
   display: grid;
   place-items: center;
+  margin-bottom: 20px;
 }
 
 #banner{
-  background-color: black;
+  background-color: #282c58;
   padding: 30px 300px 30px 300px;
+  width: 100%;
+  position: fixed;
 }
 
 h1{
   color: #fff;
-
 }
 
 #banner img {
@@ -82,7 +90,7 @@ h1 span{
 }
 
 #btPrincipal:hover{
-  color: #e66b6b;
+  color: #269ff0;
 }
 
 .btTamanho{
@@ -90,16 +98,6 @@ h1 span{
   position: absolute;
   left: 11px;
   top: 11px;
-}
-
-#btPrincipal span{
-  background-color: black;
-  color: #fff;
-  position: absolute; 
-  border-radius: 100%;
-  padding: 4px 10px 4px 10px;
-  left: 45px;
-  top: -10px;
 }
 
 #btFixo{
@@ -145,7 +143,7 @@ label{
 input{
   width: 500px;
   height: 20px;
-  border: 1px solid #0000007d;
+  border: 2px solid greenyellow;
 }
 
 #btFinalizar{
